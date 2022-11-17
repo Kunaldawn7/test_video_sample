@@ -3,7 +3,7 @@ import sys
 import streamlit as st
 import cv2
 import tempfile
-
+import time
 
 
 
@@ -41,15 +41,6 @@ if up_file:
 
     vf = cv2.VideoCapture(tfile.name)
 
-    # ---------------------  Write the processed video frame. --------------------
-    # fps = int(vf.get(cv2.CAP_PROP_FPS))
-    # width = int(vf.get(cv2.CAP_PROP_FRAME_WIDTH))
-    # height = int(vf.get(cv2.CAP_PROP_FRAME_HEIGHT))
-    # frame_size = (width, height)
-    # fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-    # video_output = cv2.VideoWriter(output_video_file, fourcc, fps, frame_size)
-    # -----------------------------------------------------------------------------
-
     
     # txt = st.sidebar.markdown(ip_vid_str, unsafe_allow_html=True)   
     # ip_video = st.sidebar.video(tfile.name) 
@@ -64,6 +55,7 @@ if up_file:
         # out_frame, _ = upload_process_frame.process(frame, pose)
         stframe.image(frame)
         # video_output.write(out_frame[...,::-1])
+        time.sleep(0.05)
 
     
     vf.release()
