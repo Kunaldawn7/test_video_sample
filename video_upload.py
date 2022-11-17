@@ -55,7 +55,7 @@ if up_file:
         # out_frame, _ = upload_process_frame.process(frame, pose)
         stframe.image(frame)
         # video_output.write(out_frame[...,::-1])
-        time.sleep(0.05)
+        time.sleep(0.5)
 
     
     vf.release()
